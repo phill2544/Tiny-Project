@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-black fixed-top">
+    <button class="btn btn-outline-light me-2" style="margin-left: 20px;" (click)="create()">Create Item</button>
+    <h3 style="text-align: center; color: wheat;">Sayomphu's store</h3>
+    <button class="btn btn-outline-danger" style="margin-right: 20px;" (click)="pathLogout()">Logout</button>
+</nav>
+<div>
+    <table class="table table-bordered border-primary" style="margin-top: 50px;">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>itemEdit</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of productList">
+                <td>{{p['productId']}}</td>
+                <td>{{p['name']}}</td>
+                <td>{{p['price']}}</td>
+                <td><button class="btn btn-danger" [routerLink]="['/create',p]">แก้ไข</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="fixed-bottom" style="margin-left: 1750px; margin-bottom:25px ;">
+
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg btn-floating" (click)="toTop()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                        class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                    </svg></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

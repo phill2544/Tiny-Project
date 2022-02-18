@@ -1,0 +1,42 @@
+<div style="margin: 50px;">
+    <h1 style="text-align: center;">Login</h1>
+    <div *ngIf="error" role="alert">
+        <h3>Error something</h3>
+    </div>
+    <br>
+    <div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>Username</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                placeholder="Username" [(ngModel)]="username">
+        </div>
+    </div>
+    <br>
+    <div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                    <path
+                        d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>Password</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                placeholder="Password" [(ngModel)]="password">
+        </div>
+    </div>
+    <div *ngIf="wrongPass" role="alert">
+        <h3>Wrong password try another password</h3>
+    </div>
+    <div *ngIf="noUser" role="alert">
+        <h3>This username does not exist</h3>
+    </div>
+
+    <br>
+    <button class="btn btn-success" (click)="login()">Sign in</button>
+    <button class="btn btn-primary" style="margin-left: 20px;" (click)="pathRegister()">Sign up</button>
+</div>
